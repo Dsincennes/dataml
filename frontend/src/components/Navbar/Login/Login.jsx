@@ -3,16 +3,24 @@ import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-function App() {
+const Login = () => {
     const [ user, setUser ] = useState([]);
     const [ profile, setProfile ] = useState([]);
 
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => {
-          setUser(codeResponse)
-          Cookies.set("user-token", codeResponse.access_token) // set our persist value , figure out where to pass it around
+            axios.post(`http://localhost:8000/api/token?code=${codeResponse.code}`, {
+                headers: {
+                    Accept: 'application/json'
+                }
+            }).then((response) => {
+                console.log(response.data);
+                setUser(response.data);
+            });
+        //   Cookies.set("user-token", codeResponse.access_token) // set our persist value , figure out where to pass it around
         },
-        onError: (error) => console.log('Login Failed:', error)
+        onError: (error) => console.log('Login Failed:', error),
+        flow: 'auth-code',
     });
 
     useEffect(
@@ -58,5 +66,6 @@ function App() {
             )}
         </div>
     );
-}
-export default App;
+};
+
+export default Login;

@@ -18,9 +18,6 @@ const LandingPage = () => {
           style={{width: '100%'}}
         />
       </div>
-      <div>
-        <Login />
-        </div>
       <div className="element" >
         <ServicesPage />
       </div>

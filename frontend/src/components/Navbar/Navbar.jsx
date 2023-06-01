@@ -16,8 +16,7 @@ const DatamlNavbar = () => {
             <Nav.Link href="#aboutus">About Us</Nav.Link>
             <Nav.Link href="#directorship">Directorship</Nav.Link>
             <Nav.Link href="#contactus">Contact Us</Nav.Link>
-            <Nav.Link href="#Login" style={{backgroundColor: "white", color: "black", borderRadius: "16px", marginLeft: "10px"}}>Log In</Nav.Link>
-            <Nav.Link href="#signup" style={{backgroundColor: "white", color: "black", borderRadius: "16px", gap: "6px", marginLeft: "10px"}}>Sign Up</Nav.Link>
+            <Nav.Link ><Login /></Nav.Link>
           </Nav>
         </Container>
       </Navbar>

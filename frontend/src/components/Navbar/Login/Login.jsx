@@ -51,20 +51,12 @@ const Login = () => {
     
     return (
         <div>
-            <h2>Google Login</h2>
-            <br />
-            {profile ? (
-                <div>
-                    <h3>{profile.name} Logged in</h3>
-                    <p>Name: {profile.name}</p>
-                    <p>Email: {profile.email}</p>
-                    <br />
-                    <button onClick={logOut}>Log out</button>
-                </div>
+        {profile ? (
+            <button onClick={logOut} style={{backgroundColor: "white", color: "black", borderRadius: "16px", marginLeft: "10px"}}>Log out</button>
             ) : (
-                <button onClick={() => login()}>Sign in with Google</button>
-            )}
-        </div>
+                <button onClick={() => login()} style={{backgroundColor: "white", color: "black", borderRadius: "16px", marginLeft: "10px"}}>Log in</button>
+                )}
+                </div>
     );
 };
 

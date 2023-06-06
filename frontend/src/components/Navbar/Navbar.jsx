@@ -11,7 +11,7 @@ const DatamlNavbar = () => {
           <Navbar.Brand href="#home">Data ML Project</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#services">Services sz</Nav.Link>
             <Nav.Link href="#projects">Products</Nav.Link>
             <Nav.Link href="#aboutus">About Us</Nav.Link>
             <Nav.Link href="#directorship">Directorship</Nav.Link>

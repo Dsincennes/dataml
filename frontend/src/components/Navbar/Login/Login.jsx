@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+import './Login.scss';
 
 const Login = () => {
     const [ user, setUser ] = useState([]);
@@ -51,26 +51,14 @@ const Login = () => {
     return (
         <>
           {profile ? (
-            <button
+            <button className='button-test'
               onClick={logOut}
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                borderRadius: "16px",
-                marginLeft: "10px",
-              }}
             >
               Log out
             </button>
           ) : (
-            <button
+            <button className='button-test'
               onClick={() => login()}
-              style={{
-                backgroundColor: "white",
-                color: "black",
-                borderRadius: "16px",
-                marginLeft: "10px",
-              }}
             >
               Log in
             </button>

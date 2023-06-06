@@ -48,16 +48,36 @@ const Login = () => {
         googleLogout();
         setProfile(null);
     };
-    
     return (
-        <div>
-        {profile ? (
-            <button onClick={logOut} style={{backgroundColor: "white", color: "black", borderRadius: "16px", marginLeft: "10px"}}>Log out</button>
-            ) : (
-                <button onClick={() => login()} style={{backgroundColor: "white", color: "black", borderRadius: "16px", marginLeft: "10px"}}>Log in</button>
-                )}
-                </div>
-    );
+        <>
+          {profile ? (
+            <button
+              onClick={logOut}
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: "16px",
+                marginLeft: "10px",
+              }}
+            >
+              Log out
+            </button>
+          ) : (
+            <button
+              onClick={() => login()}
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: "16px",
+                marginLeft: "10px",
+              }}
+            >
+              Log in
+            </button>
+          )}
+        </>
+      );
+      
 };
 
 export default Login;

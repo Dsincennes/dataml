@@ -11,7 +11,8 @@ const LandingPage = () => {
   return (
     <div className='landing-page'>
       <DatamlNavbar />
-      <div >
+      
+      <div className="header-image">
         <img
           alt="First slide"
           src="https://picsum.photos/1200/400?grayscale&blur=2&random=1"

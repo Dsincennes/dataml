@@ -1,0 +1,52 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@2.0
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.13.2
+    parameters:
+      env:
+        type: string
+    steps:
+      - checkout
+      - run: npm install ./frontend
+      - run: npm --prefix ./frontend run build
+      - persist_to_workspace:
+          root: frontend
+          paths:
+            - build
+
+  sync_s3:
+    executor: aws-cli/default
+    parameters:
+      bucket:
+        type: string
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - aws-cli/setup:
+          profile-name: default
+      - run: |
+          aws s3 sync ./build s3://hpocan-dataml
+
+workflows:
+  production:
+    jobs:
+      - build:
+          env: main
+          filters:
+            branches:
+              only:
+                - main
+      - sync_s3:
+          context: hpocan-dataml
+          bucket: hpocan-dataml
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main

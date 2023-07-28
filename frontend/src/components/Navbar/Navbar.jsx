@@ -1,6 +1,8 @@
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import Login from './Login/Login';
 
 const DatamlNavbar = () => {
@@ -8,14 +10,14 @@ const DatamlNavbar = () => {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Data ML Project</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Data ML Project</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#services">Services sz</Nav.Link>
-            <Nav.Link href="#projects">Products</Nav.Link>
-            <Nav.Link href="#aboutus">About Us</Nav.Link>
-            <Nav.Link href="#directorship">Directorship</Nav.Link>
-            <Nav.Link href="#contactus">Contact Us</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/services">Services</Nav.Link>
+            <Nav.Link as={Link} to="/projects">Products DP</Nav.Link>
+            <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
+            <Nav.Link as={Link} to="/directorship">Directorship</Nav.Link>
+            <Nav.Link as={Link} to="/contactus">Contact Us</Nav.Link>
             <Nav.Link ><Login /></Nav.Link>
           </Nav>
         </Container>

@@ -1,5 +1,4 @@
 import React from 'react'
-//import { useEffect, useState, useRef } from 'react'
 import ServicesPage from '../ServicesPage/ServicesPage';
 import './LandingPage.scss';
 import AboutUs from '../AboutUsPage/AboutUsPage';

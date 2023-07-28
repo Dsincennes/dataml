@@ -1,17 +1,13 @@
 import React from 'react'
-import DatamlNavbar from '../../components/Navbar/Navbar'
 //import { useEffect, useState, useRef } from 'react'
 import ServicesPage from '../ServicesPage/ServicesPage';
 import './LandingPage.scss';
 import AboutUs from '../AboutUsPage/AboutUsPage';
 import Projects from '../ProjectsPage/ProjectsPage';
-import Login from '../../components/Navbar/Login/Login';
 
 const LandingPage = () => {
   return (
     <div className='landing-page'>
-      <DatamlNavbar />
-      
       <div className="header-image">
         <img
           alt="First slide"

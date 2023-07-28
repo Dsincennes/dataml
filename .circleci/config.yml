@@ -40,7 +40,7 @@ workflows:
           filters:
             branches:
               only:
-                - test
+                - main
       - sync_s3:
           context: hpocan-dataml
           bucket: hpocan-dataml
@@ -49,4 +49,4 @@ workflows:
           filters:
             branches:
               only:
-                - test
+                - main

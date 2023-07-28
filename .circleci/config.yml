@@ -30,23 +30,23 @@ jobs:
       - aws-cli/setup:
           profile-name: default
       - run: |
-          aws s3 sync ./build "s3link"
+          aws s3 sync ./build s3://hpocan-dataml
 
 workflows:
   production:
     jobs:
       - build:
-          env: prod
+          env: main
           filters:
             branches:
               only:
-                - prod
+                - test
       - sync_s3:
-          context: s3name
-          bucket: "s3bucket"
+          context: hpocan-dataml
+          bucket: hpocan-dataml
           requires:
             - build
           filters:
             branches:
               only:
-                - prod
+                - test

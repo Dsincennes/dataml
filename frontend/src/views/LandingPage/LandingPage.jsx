@@ -4,6 +4,7 @@ import './LandingPage.scss';
 import AboutUs from '../AboutUsPage/AboutUsPage';
 import Projects from '../ProjectsPage/ProjectsPage';
 
+
 const LandingPage = () => {
   return (
     <div className='landing-page'>

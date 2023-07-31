@@ -1,8 +1,18 @@
 .about-us{
     text-align: center;
-    display: flex;
+    display: grid;
     flex-direction: column;
     width: 80%;
     font-size: 20px;
-    height: 500px;
+}
+
+@media screen and (max-width: 990px) {
+    .about-us{
+        text-align: center;
+        display: grid;
+        flex-direction: column;
+        width: 80%;
+        font-size: 20px;
+        overflow: hidden;
+    }
 }

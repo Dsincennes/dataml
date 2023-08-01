@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import LandingPage from './views/LandingPage/LandingPage';
-/*import ServicesPage from './views/ServicesPage/ServicesPage';*/
 import ProjectsPage from './views/ProjectsPage/ProjectsPage';
 import AboutUsPage from './views/AboutUsPage/AboutUsPage';
 import Service from './views/Service/Service';

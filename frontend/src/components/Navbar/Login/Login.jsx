@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 
 const Login = () => {
     const [ user, setUser ] = useState([]);
@@ -9,12 +9,12 @@ const Login = () => {
 
     const login = useGoogleLogin({
         onSuccess: (codeResponse) => {
-            axios.post(`http://localhost:8000/api/token?code=${codeResponse.code}`, {
+            axios.post(`https://ahulubfax6.execute-api.us-east-1.amazonaws.com/dev/api/token?code=${codeResponse.code}`, {
                 headers: {
                     Accept: 'application/json'
                 }
             }).then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 setUser(response.data);
             });
         //   Cookies.set("user-token", codeResponse.access_token) // set our persist value , figure out where to pass it around

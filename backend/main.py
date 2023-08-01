@@ -2,26 +2,36 @@ from fastapi import FastAPI
 from fastapi import HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import httpx
+from mangum import Mangum
+from config import config
+import logging
+
 
 app = FastAPI()
 
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Replace with your React app's origin
+    allow_origins=["https://dataml.io"],  # Replace with your React app's origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+async def test():
+    print('test')
+    return {'name': 'testName'}
+
 
 @app.post("/api/token")
 async def exchange_token(code: str):
     try:
         # Set up the required parameters for the token exchange
         token_url = 'https://oauth2.googleapis.com/token'
-        client_id = '464650243008-htr6rdeblfdus820trpt7apjmo9nl86u.apps.googleusercontent.com'
-        client_secret = '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'
-        redirect_uri = 'http://localhost:3000'
+        client_id = '464650243008-htr6rdeblfdus820trpt7apjmo9nl86u.apps.googleusercontent.com' #TODO add this to awsSecret
+        client_secret = config['oauth_secret']
+        redirect_uri = 'https://dataml.io'
         
         # Send a POST request to exchange the authorization code for a refresh token
         async with httpx.AsyncClient() as client:
@@ -35,7 +45,6 @@ async def exchange_token(code: str):
                     'grant_type': 'authorization_code'
                 }
             )
-
             # Check if the request was successful
             if response.status_code == 200:
                 return response.json()
@@ -50,8 +59,8 @@ async def refresh_token(code: str):
         # Set up the required parameters for the token exchange
         token_url = 'https://oauth2.googleapis.com/token'
         client_id = '464650243008-htr6rdeblfdus820trpt7apjmo9nl86u.apps.googleusercontent.com'
-        client_secret = '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'
-        redirect_uri = 'http://localhost:3000'
+        client_secret = config['oauth_secret']
+        redirect_uri = 'https://dataml.io'
         print("hello")
         # Send a POST request to exchange the authorization code for a refresh token
         async with httpx.AsyncClient() as client:
@@ -75,3 +84,4 @@ async def refresh_token(code: str):
     except httpx.RequestError as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+handler = Mangum(app, lifespan="off")

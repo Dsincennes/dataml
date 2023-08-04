@@ -1,78 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, Button } from '@material-ui/core';
+import React, { useState } from 'react';
+import dynamodb from './awsConfig'; // Import the AWS SDK configuration
+import './Contact.css'; // Import the CSS file for styling
 
-function Contact() {
-  const [open, setOpen] = useState(true);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [question, setQuestion] = useState('');
-  const navigate = useNavigate();
+const Contact = ({ onClose }) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    email: '',
+    question: '',
+  });
 
-  const handleCloseDialog = () => {
-    setOpen(false);
-    navigate(-1); // Go back to the previous page
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    // Do something with the form data, such as sending it to a server
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Question:', question);
-    // Reset the form fields
-    setName('');
-    setEmail('');
-    setQuestion('');
-    // Close the dialog box
-    setOpen(false);
-    navigate(-1); // Go back to the previous page
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Save the form data to DynamoDB
+       dynamodb.put({
+        TableName: 'ContactUsFormData', // Replace with your actual DynamoDB table name
+        Item: {
+          firstName: formData.name,
+          email: formData.email,
+          question: formData.question,
+        },
+      }).promise();
+  
+      console.log('Data submitted successfully');
+      onClose();
+    } catch (error) {
+      console.error('Error submitting data', error);
+    }
   };
 
-  useEffect(() => {
-    // Automatically open the dialog when the component mounts
-    setOpen(true);
-  }, []);
+  const handleCancel = () => {
+    onClose();
+  };
 
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <Dialog open={open} onClose={handleCloseDialog}>
-        <DialogTitle>Contact Us</DialogTitle>
-        <DialogContent>
-          <form onSubmit={handleFormSubmit}>
-            <TextField
-              label="Name"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              required
-            />
+    <div className="contact-form-container">
+      <div className="contact-form">
+        <h2>Contact Us</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+          </div>
 
-            <TextField
-              label="Email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              required
-            />
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
 
-            <TextField
-              label="Question"
-              multiline
-              rows={4}
-              value={question}
-              onChange={(event) => setQuestion(event.target.value)}
-              required
-            />
+          <div className="form-group">
+            <label htmlFor="question">Question:</label>
+            <textarea id="question" name="question" rows="4" value={formData.question} onChange={handleChange} required />
+          </div>
 
-            <DialogActions>
-              <Button onClick={handleCloseDialog}>Cancel</Button>
-              <Button type="submit" color="primary">Submit</Button>
-            </DialogActions>
-          </form>
-        </DialogContent>
-      </Dialog>
+          <div className="form-buttons">
+            <button type="submit">Submit</button>
+            <button type="button" onClick={handleCancel}>Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default Contact;

@@ -1,28 +1,30 @@
-import React from 'react'
+import React from 'react';
 import ServicesPage from '../ServicesPage/ServicesPage';
+import ProjectsPage from '../ProjectsPage/ProjectsPage'; 
+import AboutUsPage from '../AboutUsPage/AboutUsPage'; 
 import './LandingPage.scss';
-import AboutUs from '../AboutUsPage/AboutUsPage';
-import Projects from '../ProjectsPage/ProjectsPage';
+
+
 
 
 const LandingPage = () => {
   return (
     <div className='landing-page'>
-      <div className="header-image">
+      <div id="image" className="header-image">
         <img
           alt="First slide"
           src="https://picsum.photos/1200/400?grayscale&blur=2&random=1"
-          style={{width: '100%'}}
+          style={{ width: '100%' }}
         />
       </div>
-      <div className="element" >
+      <div id="services" className="element">
         <ServicesPage />
       </div>
-      <div className="element">
-        <AboutUs />
+      <div id="projects" className="element">
+        <ProjectsPage />
       </div>
-      <div className="element">
-        <Projects />
+      <div id="aboutus" className="element">
+        <AboutUsPage />
       </div>
     </div>
   )

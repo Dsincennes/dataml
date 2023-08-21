@@ -1,8 +1,8 @@
 .services-page {
   display: flex;
   flex-direction: column;
-  height: 850px;
-  width: 90%;
+  height: 600px;
+  width: 80%;
   overflow:fit-content;
   overflow:visible;
   background-color: lightblue;
@@ -35,7 +35,7 @@
   .services-page {
     display: flex;
     flex-direction: column;
-    height: 2400px;
+    height: 1000%;
     width: 90%;
     overflow:fit-content;
     overflow:visible;
@@ -66,7 +66,7 @@
 @media all and (max-width: 990px) {
   .services-page {
     display: grid;
-    background-color: lightgray;
+    background-color: lightblue;
     flex-direction: column;
     overflow: auto;
   }

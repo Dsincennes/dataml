@@ -4,6 +4,7 @@
     flex-direction: column;
     width: 80%;
     font-size: 20px;
+    background-color: lightgreen;
 }
 
 @media screen and (max-width: 990px) {
@@ -11,7 +12,7 @@
         text-align: center;
         display: grid;
         flex-direction: column;
-        width: 80%;
+        width: 90%;
         font-size: 20px;
         overflow: hidden;
     }

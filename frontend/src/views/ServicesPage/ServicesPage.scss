@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   height: 850px;
-  width: 100%;
+  width: 90%;
   overflow:fit-content;
   overflow:visible;
+  background-color: lightblue;
 }
 
 .services-links {
@@ -34,8 +35,8 @@
   .services-page {
     display: flex;
     flex-direction: column;
-    height: 2300px;
-    width: 100%;
+    height: 2400px;
+    width: 90%;
     overflow:fit-content;
     overflow:visible;
   }

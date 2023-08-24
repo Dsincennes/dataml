@@ -7,7 +7,7 @@ import Login from './Login/Login';
 const DatamlNavbar = () => {
   return (
     <>
-      <Navbar sticky="top" expand="lg" bg="dark" variant="dark">
+      <Navbar expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">Data ML Project</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" /> {/* sandwich toggle for when screen resolution is equivalent to mobile devices */}

@@ -1,0 +1,64 @@
+.contactus{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 500px;
+  font-size: 20px;
+  background-color: lavender;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #ccc;
+}
+
+
+@media all and (max-width: 990px) {
+  .contactus{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      height: 500px;
+      font-size: 20px;
+      background-color: lavender;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+}

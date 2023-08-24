@@ -1,0 +1,37 @@
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.form-buttons button[type="button"] {
+  background-color: #ccc;
+}

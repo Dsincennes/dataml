@@ -5,7 +5,7 @@
   width: 80%;
   overflow:fit-content;
   overflow:visible;
-  background-color: lightblue;
+  // background-color: lightblue;
 }
 
 .services-links {
@@ -24,12 +24,25 @@
   flex-basis: 20%;
   flex-direction: column;
   overflow:fit-content;
-
   .link-image {
     max-width: 100px;
   }
 
 }
+
+.button {
+  padding: 8px 15px;
+  width: max-content; 
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: purple;
+  color: #fff;
+  align-self: center;
+  margin-bottom: 0%;
+}
+
+
 
 @media all and (max-width: 1250px) {
   .services-page {
@@ -62,11 +75,10 @@
   }
 }
 
-
 @media all and (max-width: 990px) {
   .services-page {
     display: grid;
-    background-color: lightblue;
+    // background-color: lightblue;
     flex-direction: column;
     overflow: auto;
   }

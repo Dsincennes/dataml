@@ -9,7 +9,7 @@ const DatamlNavbar = () => {
     <>
       <Navbar sticky="top" expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Data ML Project</Navbar.Brand>
+          <Navbar.Brand href="#image">Data ML Project</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" /> {/* sandwich toggle for when screen resolution is equivalent to mobile devices */}
           <Navbar.Collapse id="basic-navbar"> {/* collapsed navbar */}
             <Nav className="me-auto">

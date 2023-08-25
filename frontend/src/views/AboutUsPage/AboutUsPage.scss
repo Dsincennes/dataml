@@ -4,14 +4,17 @@
     flex-direction: column;
     width: 80%;
     font-size: 20px;
+    height: 400px;
+    // background-color: lightgreen;
 }
 
 @media screen and (max-width: 990px) {
     .about-us{
         text-align: center;
-        display: grid;
+        display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 90%;
+        height: 800px;
         font-size: 20px;
         overflow: hidden;
     }

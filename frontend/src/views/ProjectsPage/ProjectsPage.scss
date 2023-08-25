@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 500px;
+    height: 400px;
     font-size: 20px;
+    // background-color: lightpink;
 }
 
 @media all and (max-width: 990px) {
@@ -12,8 +13,8 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        width: 80%;
-        height: 500px;
+        width: 90%;
+        height: 800px;
         font-size: 20px;
     }
     

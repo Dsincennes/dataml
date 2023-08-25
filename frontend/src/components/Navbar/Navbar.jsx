@@ -13,7 +13,7 @@ const DatamlNavbar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" /> {/* sandwich toggle for when screen resolution is equivalent to mobile devices */}
           <Navbar.Collapse id="basic-navbar"> {/* collapsed navbar */}
             <Nav className="me-auto">
-              <Nav.Link href="#landingimage">Home</Nav.Link>
+              <Nav.Link href="#image">Home</Nav.Link>
               <Nav.Link href="#services">Services</Nav.Link>
               <Nav.Link href="#projects">Products</Nav.Link>
               <Nav.Link href="#aboutus">About Us</Nav.Link>

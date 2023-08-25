@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import dynamodb from './awsConfig'; // Import the AWS SDK configuration
 import './ContactUsPage.scss';
 import { v4 as uuidv4 } from 'uuid';

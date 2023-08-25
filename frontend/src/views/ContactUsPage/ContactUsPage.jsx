@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import dynamodb from './awsConfig'; // Import the AWS SDK configuration
 import './ContactUsPage.scss';
-import { SHA256 } from 'crypto-js';
 import { v4 as uuidv4 } from 'uuid';
 
 const ContactUsPage = () => {
@@ -23,7 +22,6 @@ const ContactUsPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    const hashedValue = SHA256(formData.question).toString();
 
       e.preventDefault();
       try {

@@ -1,42 +1,70 @@
-import React from 'react';
-import { Auth } from 'aws-amplify'; 
-
+import React, { useState, useEffect } from 'react';
+import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
+// import Cookies from 'js-cookie';
 
 const Login = () => {
+    const [ user, setUser ] = useState([]);
+    const [ profile, setProfile ] = useState([]);
 
-    const oauth = {
-      domain: 'dataml.auth.us-east-1.amazoncognito.com',
-      scope: ['email', 'openid'],
-      redirectSignIn: 'https://dataml.io/', // Redirect URL after sign in
-      redirectSignOut: 'https://dataml.io/', // Redirect URL after sign out
-      responseType: 'token',
-      options: {
-        AdvancedSecurityDataCollectionFlag: true
-      }
-    }
+    const login = useGoogleLogin({
+        onSuccess: (codeResponse) => {
+            axios.post(`https://ahulubfax6.execute-api.us-east-1.amazonaws.com/dev/api/token?code=${codeResponse.code}`, {
+                headers: {
+                    Accept: 'application/json'
+                }
+            }).then((response) => {
+                // console.log(response.data);
+                setUser(response.data);
+            });
+        //   Cookies.set("user-token", codeResponse.access_token) // set our persist value , figure out where to pass it around
+        },
+        onError: (error) => console.log('Login Failed:', error),
+        flow: 'auth-code',
+    });
 
-    Auth.configure({
-      Auth: {
-        region: 'us-east-1',
-        userPoolId: 'us-east-1_fgSZqqste',
-        userPoolWebClientId: '2bcudra8uccse9hh1dceu5hci8',
-        oauth: oauth
-      },
-    })
+    useEffect(
+        () => {
+            if (user) {
+                axios
+                    .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
+                        headers: {
+                            Authorization: `Bearer ${user.access_token}`,
+                            Accept: 'application/json'
+                        }
+                    })
+                    .then((res) => {
+                        // add to database here.
+                        setProfile(res.data);
+                    })
+                    .catch((err) => console.log(err));
+            }
+        },
+        [ user ]
+    );
 
-    const onLogin = () => {
-      const URL = "https://dataml.auth.us-east-1.amazoncognito.com/login?client_id=2bcudra8uccse9hh1dceu5hci8&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fdataml.io"
-      window.location.assign(URL); 
-    }
-
-    // const onSignout = () => {
-    //   const URL = "https://dataml.io/"
-    //   window.location.assign(URL); 
-    // }
+    // log out function to log the user out of google and set the profile array to null
+    const logOut = () => {
+        googleLogout();
+        setProfile(null);
+    };
     return (
         <>
+          {profile ? (
             <button
-              onClick={() => onLogin()}
+              onClick={logOut}
+              style={{
+                backgroundColor: "white",
+                color: "black",
+                borderRadius: "16px",
+                marginLeft: "10px",
+              }}
+            >
+              Log out
+            </button>
+          ) : (
+            <button
+              onClick={() => login()}
               style={{
                 backgroundColor: "white",
                 color: "black",
@@ -46,6 +74,7 @@ const Login = () => {
             >
               Log in
             </button>
+          )}
         </>
       );
       

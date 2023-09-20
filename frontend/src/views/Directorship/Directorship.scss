@@ -1,0 +1,67 @@
+.thank-you-message {
+    font-size: 24px; /* You can adjust the font size as needed */
+    margin-top: 10px; /* Add some space between the message and the form */
+    color: green; /* Adding color to the message */
+    font-weight: bold; /* Adding bold font weight */
+  }
+  .directorship{
+    text-align: center;
+    display: grid;
+    flex-direction: column;
+    width: 60%;
+    font-size: 20px;
+    height: 600px;
+    background-color: rgb(236, 236, 236);
+    border: 1px solid black; /* Add a 1px black border */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+   
+  }
+  
+  .form-buttons button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .form-buttons button[type="button"] {
+    background-color: #ccc;
+  }
+  
+  @media screen and (max-width: 990px) {
+    .contactus{
+      text-align: center;
+      display: grid;
+      flex-direction: column;
+      width: 90%;
+      font-size: 20px;
+      height: 600px;
+      background-color: lavender;
+    }
+  }

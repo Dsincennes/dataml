@@ -2,7 +2,7 @@ import React from 'react';
 import './ServicesPage.scss';
 import { faChartColumn, faChartSimple, faEarthAmericas, faMaximize, faCoins, faChartLine,faMagnifyingGlass, faFaceGrin } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import GeoDemographic from '../Services/GeoDemographic';
+import { Link } from 'react-router-dom';
 
 
 const ServicesPage = () => {
@@ -19,35 +19,45 @@ const ServicesPage = () => {
           <p></p>
           <h3>Social Media Analysis</h3>
           <p>Social media analysis can leverage machine learning to detect sentiment, identify influencers, and predict trends.</p>
-          <button class="button">Demo</button>
+          <Link to="/services/SocialMedia" className="button">
+            Demo
+          </Link>
         </div>
         <div className="services-link">
           <FontAwesomeIcon icon={faEarthAmericas} size="6x" style={{color: "#580f80"}}></FontAwesomeIcon>
           <p></p>
           <h3>GeoDemographic Analysis</h3>
           <p>Machine learning can be used for geodemographic analysis by identifying patterns in location data, predicting customer segments, and optimizing marketing campaigns by location.</p>
-          <button class="button">Demo</button>
+          <Link to="/services/GeoDemographic" className="button">
+            Demo
+          </Link>
         </div>
         <div className="services-link">
         <FontAwesomeIcon icon={faChartSimple} size="6x" style={{color: "#580f80"}}></FontAwesomeIcon>
           <p></p>
           <h3>Marketing Analysis</h3>
           <p>Marketing analysis can benefit from machine learning by analyzing customer preferences, predicting user engagement, and optimizing ad targeting.</p>
-          <button class="button">Demo</button>
+          <Link to="/services/Marketing" className="button">
+            Demo
+          </Link>
         </div>
         <div className="services-link">
           <FontAwesomeIcon icon={faChartColumn} size="6x" style={{color: "#580f80"}}></FontAwesomeIcon>
           <p></p>
           <h3>Trend Analysis</h3>
           <p>Trend analysis can benefit from machine learning by identifying patterns in data, predicting future trends, and providing insights that can inform decision-making across a wide range of industries.</p>
-          <button class="button">Demo</button>
+          <Link to="/services/TrendPage" className="button">
+            Demo
+          </Link>
         </div>
         <div className="services-link">
           <FontAwesomeIcon icon={faCoins} size="6x" style={{color: "#580f80"}}></FontAwesomeIcon>
           <p></p>
           <h3>Financial Analysis</h3>
           <p>Machine learning can be used for financial analysis to detect fraudulent transactions, predict stock prices, and analyze customer creditworthiness.</p>
-          <button class="button">Demo</button>
+          <Link to="/services/Financial" className="button">
+            Demo
+          </Link>
         </div>
         <div className="services-link">
           <FontAwesomeIcon icon={faChartLine} size="6x" style={{color: "#580f80"}}></FontAwesomeIcon>

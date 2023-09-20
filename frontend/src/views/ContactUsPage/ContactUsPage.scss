@@ -11,7 +11,9 @@
   width: 60%;
   font-size: 20px;
   height: 600px;
-  background-color: lavender;
+  background-color: rgb(236, 236, 236);
+  border: 1px solid black; /* Add a 1px black border */
+  border-radius: 12px;
 }
 
 .form-group {

@@ -1,0 +1,11 @@
+.login-button {
+    color: #fff; /* Change the text color to white or your preferred color */
+    border-radius: 5px; /* Add rounded corners */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  .login-button:hover {
+    background-color: #490050; /* Change the background color on hover */
+    color: #fff; /* Change the text color on hover */
+  }

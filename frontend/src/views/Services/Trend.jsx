@@ -1,5 +1,4 @@
 import React from 'react';
-import './ProjectsPage.scss';
 
 const TrendPage = () => {
   return (

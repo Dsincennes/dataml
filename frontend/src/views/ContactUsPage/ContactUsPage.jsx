@@ -71,7 +71,7 @@ const ContactUsPage = () => {
         <div className="form-buttons">
           <button type="submit">Submit</button>
         </div>
-        {submitted && <p className="thank-you-message">Thanks for contacting us</p>}
+        {submitted && <p className="thank-you-message">Thank you for contacting us.</p>}
       </form>
     </div>
   );

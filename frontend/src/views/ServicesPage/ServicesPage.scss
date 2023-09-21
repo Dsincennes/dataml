@@ -3,8 +3,8 @@
   flex-direction: column;
   height: 1200px;
   width: 80%;
-  overflow:fit-content;
-  overflow:visible;
+  overflow: fit-content;
+  overflow: visible;
 }
 
 .services-links {
@@ -15,31 +15,37 @@
   margin-top: 15px;
   justify-content: center;
   text-align: center;
-  overflow:fit-content;
+  overflow: fit-content;
 }
 
 /* bio for analysis types*/
-.services-link { 
+.services-link {
   display: flex;
   flex-basis: 20%;
   flex-direction: column;
-  overflow:fit-content;
+  overflow: fit-content;
+
   .link-image {
     max-width: 100px;
   }
 
+  margin-bottom: 50px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px
 }
 
 .button {
   margin-top: auto;
   padding: 8px 15px;
-  width: max-content; 
+  width: max-content;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  background-color: purple;
+  background-color: rgb(28, 2, 100);
   color: #fff;
   align-self: center;
+  text-decoration: none;
 }
 
 .services-table {
@@ -66,8 +72,8 @@
     flex-direction: column;
     height: 1000%;
     width: 90%;
-    overflow:fit-content;
-    overflow:visible;
+    overflow: fit-content;
+    overflow: visible;
   }
 
   .services-links {

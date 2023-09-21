@@ -1,7 +1,7 @@
 import React from 'react';
 import ServicesPage from '../ServicesPage/ServicesPage';
-import ProjectsPage from '../ProjectsPage/ProjectsPage'; 
-import AboutUsPage from '../AboutUsPage/AboutUsPage'; 
+import ProjectsPage from '../ProjectsPage/ProjectsPage';
+import AboutUsPage from '../AboutUsPage/AboutUsPage';
 import ContactUsPage from '../ContactUsPage/ContactUsPage';
 import './LandingPage.scss';
 
@@ -14,8 +14,7 @@ const LandingPage = () => {
       <div id="image" className="header-image">
         <img
           alt="First slide"
-          src="https://picsum.photos/1200/400?grayscale&blur=2&random=1"
-          style={{ width: '100%' }}
+          src="https://picsum.photos/1200/400?grayscale&random=1"
         />
       </div>
       <div id="services" className="element">

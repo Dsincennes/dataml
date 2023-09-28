@@ -1,10 +1,10 @@
-To start the localhost application: 
+## To start the localhost application: 
 1. In order to run the code in localhost, first you must do this is git bash: npm install
 2. Then change the directory to the frontend folder: cd frontend
 3. To start the application: npm start
 
 
-To find the database tables associated to the live website in AWS
+## To find the database tables associated to the live website in AWS
 1. Log into your AWS account
 2. In the search bar, look up "DynamoDB" and click on it
 3. To ensure you are able to view the tables, in the top right of the web page, ensure the region is "us-east-1" 
@@ -13,13 +13,13 @@ To find the database tables associated to the live website in AWS
 6. Click the button at the top right: "Explore table items" and scroll down to view all table entries
 
 
-Navigation bar using React Bootstrap
+## Navigation bar using React Bootstrap
 1. Import Navbar from 'react-bootstrap/Navbar' to the appropriate .jsx file
 2. Use the <Navbar> tag as the parent. To make the navbar stick to the top of the page no matter the scroll position, use sticky="top"
 3. To make a collapsible navbar, use <Navbar.Collapse> and add a sandwich icon for toggling with <Navbar.Toggle> 
 
 
-To add OAuth options (Google/Login with Amazon)
+## To add OAuth options (Google/Login with Amazon)
 1. In AWS, navigate to Cognito by searching it at the search bar, making sure the location at the top right is "us-east-1"
 2. Click on "DataMLUserPool" 
 3. Go to "Sign-in experience" and scroll down to the Federated identity provider section and click the "Add identity provider" button

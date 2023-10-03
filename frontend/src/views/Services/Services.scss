@@ -1,0 +1,40 @@
+
+
+
+.analysisNav {
+    position: relative;
+    width: 100%;
+    background-color: lightgray;
+    left: 0;
+    padding: 10px;
+    border-radius: 20px;
+    
+}
+
+/* CSS for the main content */
+.main-content {
+    padding: 20px; /* Add padding to create spacing around the content */
+    background-color: #f0f0f0; /* Set a background color */
+    border: 1px solid #ccc; /* Add a border around the content */
+  }
+
+  /* Styles for header and text within the main content */
+  .main-content header {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .main-content main {
+    padding: 20px;
+    font-size: 16px;
+  }
+  
+  /* Footer styles */
+  .main-content footer {
+    padding: 10px;
+    margin-top: 20px; /* Add spacing between content and footer */
+    color: #777;
+    font-size: 12px;
+  }

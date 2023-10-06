@@ -33,3 +33,9 @@
 9. Under "identity providers", click on the drop down menu and choose the OAuth options you set up, add the OAuth 2.0 grant types, and OpenID connect scopes then click "Save changes" at the bottom
 10. To test the Hosted UI, scroll to the Hosted UI section in the app client (steps 7 & 8) and click "View Hosted UI"
 
+
+## Side Nav Bar for Analysis Page (WIP) 
+There is no side navbar that is built-in to the react bootstrap so alternative method is to use HTML and CSS.
+- Alternatively decided to go with adding a banner nav bar at the top of the analysis page to store sub sections in each analysis as side nav bar did not seem to work when implemented with the current design of the web page.
+- Set the position as relative so it is not covered by the main nav bar at the top of the pages
+- issues with centering the content so left as 100% width at the top, may update it so the links are centered instead 

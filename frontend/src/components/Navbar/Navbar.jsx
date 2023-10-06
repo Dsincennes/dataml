@@ -19,7 +19,7 @@ const DatamlNavbar = () => {
               <HashLink to="/#services" className="nav-link">Services</HashLink>
               <Link to="/views/directorship" className="nav-link">
                 Directorship
-              </Link>z
+              </Link>
               <HashLink to="/#projects"  offset={-160} className="nav-link">Products</HashLink>
               <HashLink to="/#aboutus" className="nav-link">About Us</HashLink>
               <HashLink to="/#contactus" className="nav-link">Contact Us</HashLink>

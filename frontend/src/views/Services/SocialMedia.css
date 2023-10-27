@@ -1,0 +1,75 @@
+/* In a separate CSS file or a styled-components style block */
+.social-media-dashboard {
+    background-color: #f2f2f2;
+    padding: 20px;
+    height: 100vh; /* Set a minimum height for the dashboard */
+  }
+  
+  .dashboard-content {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px; /* Add some margin around the dashboard content */
+  }
+  
+  .sidebar {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 20px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column; /* Stack sidebar items vertically */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    cursor: pointer;
+    padding: 10px 0;
+    transition: background-color 0.3s; /* Add a smooth hover effect */
+  }
+  
+  .sidebar li.active {
+    background-color: #6573c3;
+  }
+  
+  .content {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  /* Dynamic Color Example */
+  .active-platform {
+    background-color: #3949ab; /* A different color for the active platform */
+  }
+  
+  /* Hover Effect */
+  .sidebar li:not(.active):hover {
+    background-color: #5360c4;
+  }
+  
+  /* Extra Border */
+  .social-media-dashboard {
+    border: 1px solid #ddd; /* Add a border around the dashboard */
+    border-radius: 8px; /* Ensure the border has rounded corners */
+  }
+  
+  .sidebar li {
+    border-radius: 4px; /* Round the corners of sidebar items */
+  }
+  
+  /* Custom Hover Effect */
+  .sidebar li:not(.active):hover {
+    background-color: #5360c4;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow on hover */
+  }
+  

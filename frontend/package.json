@@ -17,7 +17,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
-    "react-jupyter": "^0.1.0",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^6.16.0",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",

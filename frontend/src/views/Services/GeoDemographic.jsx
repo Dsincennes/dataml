@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
+import './GeoDemographic.scss';
 
 const GeoDemographic = () => {
     return (
@@ -8,14 +9,19 @@ const GeoDemographic = () => {
             <head>
                 <title>Geodemographic Analysis</title>
             </head>
-            <body>
+            <body class='geodemo-container' >
                 <header>
-                    <h1>Welcome to the Geodemographic Analysis Page!</h1>
-                </header>
+                    <br></br>
+                    <h1>Welcome to the Geodemographic Analysis Page</h1>
+                    <br></br>
+                </header> 
 
-                <main>
-                    <h2>Content Section</h2>
-                    <p>This is a basic HTML page. You can replace this content with your own.</p>
+                <main class='geodemo-container'>
+                    <iframe 
+                        src="https://geodemographic-analysis.runmercury.com/" 
+                        title="Geodemographic Analysis Examples" 
+                        class='iframe-style'> </iframe>
+
                 </main>
 
                 <footer>

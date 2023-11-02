@@ -8,7 +8,7 @@ const Marketing = () => {
       <Navbar />
       <h1>Marketing analysis</h1>
       <div className="iframe-container">
-        <iframe src="https://dataml-ds.runmercury.com" width="1200" height="800"></iframe>
+        <iframe src="https://dataml-ds.runmercury.com" width="1200" height="800" title="Marketing Data Analysis"></iframe>
       </div>
     </div>
   )

@@ -1,16 +1,17 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
+import './Marketing.scss'; // Import a CSS file for styling
 
 const Marketing = () => {
   return (
-    <div className="trend">
+    <div className="Marketing-Main">
       <Navbar />
       <h1>Marketing analysis</h1>
-      <p>
-        Marketing analysis will be displayed here with google colab
-      </p>
+      <div className="iframe-container">
+        <iframe src="https://dataml-ds.runmercury.com" width="1200" height="800" title="Marketing Data Analysis"></iframe>
+      </div>
     </div>
   )
 }
 
-export default Marketing
+export default Marketing;

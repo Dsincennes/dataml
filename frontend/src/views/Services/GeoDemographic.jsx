@@ -9,7 +9,7 @@ const GeoDemographic = () => {
 
     const redirectToURL = () => {
         // Redirecting to streamlit in EC2 instance
-        window.location.href = 'http://18.217.43.98:8501';
+        window.location.href = 'http://18.118.169.8:8501';
       };
       
     const geodemoMenu = {

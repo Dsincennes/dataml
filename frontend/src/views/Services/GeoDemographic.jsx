@@ -16,7 +16,7 @@ const GeoDemographic = () => {
         Analysis: (
             <div> 
                 <div>
-                    <h3>Click below to run the housing analysis</h3>
+                    <h3>Check out below</h3>
                     {/* <button onClick={redirectToURL}>Open Streamlit</button> */}
                     <iframe src="http://18.220.231.13:8501" title="geodemo-st-app"className="iframe-style" ></iframe>
                 </div>

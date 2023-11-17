@@ -7,17 +7,18 @@ import './SocialMedia.css';
 const GeoDemographic = () => {
     const [selectedOption, setSelectedOption] = useState('Analysis');
 
-    const redirectToURL = () => {
-        // Redirecting to streamlit in EC2 instance
-        window.location.href = 'http://18.220.231.13:8501';
-      };
+    // const redirectToURL = () => {
+    //     // Redirecting to streamlit in EC2 instance
+    //     window.location.href = 'http://18.220.231.13:8501';
+    //   };
       
     const geodemoMenu = {
         Analysis: (
             <div> 
                 <div>
                     <h3>Click below to run the housing analysis</h3>
-                    <button onClick={redirectToURL}>Open Streamlit</button>
+                    {/* <button onClick={redirectToURL}>Open Streamlit</button> */}
+                    <iframe src="http://18.220.231.13:8501" title="geodemo-st-app"className="iframe-style" ></iframe>
                 </div>
             </div>
         ), 

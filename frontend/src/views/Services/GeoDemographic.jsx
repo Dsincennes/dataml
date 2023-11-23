@@ -1,27 +1,77 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from '../../components/Navbar/Navbar';
+import './GeoDemographic.scss';
+import './SocialMedia.css';
+
 
 const GeoDemographic = () => {
+    const [selectedOption, setSelectedOption] = useState('Analysis');
+
+    // const redirectToURL = () => {
+    //     // Redirecting to streamlit in EC2 instance
+    //     window.location.href = 'http://18.220.231.13:8501';
+    //   };
+      
+    const geodemoMenu = {
+        Analysis: (
+            <div> 
+                <div>
+                    <h3>Check out below</h3>
+                    {/* <button onClick={redirectToURL}>Open Streamlit</button> */}
+                    <iframe src="http://18.220.231.13:8501" title="geodemo-st-app"className="iframe-style" ></iframe>
+                </div>
+            </div>
+        ), 
+        Documentation: (
+            <div> 
+                <div>
+                    <h3>Storing good to know documentation here for general users or things I learned along the way</h3>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="geodemographic">
             <Navbar />
             <head>
                 <title>Geodemographic Analysis</title>
+                
             </head>
-            <body>
+            <body class='geodemo-container' >
                 <header>
-                    <h1>Welcome to the Geodemographic Analysis Page!</h1>
-                </header>
+                    <br></br>
+                    <h1>Welcome to the Geodemographic Analysis Page</h1>
+                    <br></br>
+                    <p>Select an option below:</p>
+                </header> 
+                <div className="geodemo-dashboard">
+                        <div className="sidebar">
+                            <ul>
+                                {Object.keys(geodemoMenu).map((option) => (
+                                    <li
+                                        key={option}
+                                        className={selectedOption === option ? 'active' : ''}
+                                        onClick={() => {
+                                            setSelectedOption(option);
+                                        }}
+                                    >
+                                        {option}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                <main>
-                    <h2>Content Section</h2>
-                    <p>This is a basic HTML page. You can replace this content with your own.</p>
-                </main>
-
+                        <div className="content">
+                            {geodemoMenu[selectedOption]}
+                        </div>
+                    
+                </div>
                 <footer>
                     <p>&copy; 2023 Data Machine Learning. All rights reserved.</p>
-                </footer>
+                </footer>                
             </body>
+            
         </div>
     )
 }

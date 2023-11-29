@@ -33,3 +33,20 @@
 9. Under "identity providers", click on the drop down menu and choose the OAuth options you set up, add the OAuth 2.0 grant types, and OpenID connect scopes then click "Save changes" at the bottom
 10. To test the Hosted UI, scroll to the Hosted UI section in the app client (steps 7 & 8) and click "View Hosted UI"
 
+
+## Setting up Mercury to Embed
+This method of embedding Mercury will allow for a separation between the React code in Github (frontend) and the Python for the machine learning (backend) as asked for by the client. 
+1. Go to: https://cloud.runmercury.com/register 
+2. Create an account and verify as per the instructions.
+3. Once logged in and verified, click on the "Add Site" button and fill in the requirements
+    a. Title - this will just be the title of the site that is holding your *.ipynb files
+    b. Address - this will be the subdomain name you believe is relevant, i.e. "geodemographic-analysis"
+    c. Domain - by default, it will have ".RunMercury.com" and it can stay as default since we are embedding but can be changed to something like ".dataml.io"
+    d. Sharing - by default, it is public. To access private options, it will require an upgraded plan
+    e. Welcome message - here, you can put a brief explanation/introduction to your section 
+4. Click on "OK" once done and your website will be launched
+5. To add *.ipynb files, click "Upload files" 
+6. Once uploaded, click "OK" and you can view the website to get an idea of the layout (*subdomain-name-you-chose*.RunMercury.com)
+7. In you React application code, Mercury is embedded using <iframe src="*URL-for-Mercury-site-here*" title="*title-of-your-choice*">
+    a. By implementing the use of <iframe>, it allows the Mercury functionalities to remain while being implemented as a section within the application. 
+    b. To make changes to the *.ipynb files in Mercury, it can be accessed by going to: https://cloud.runmercury.com/sites and replacing files as you go without interfering with the main React source code

@@ -184,7 +184,7 @@ const SocialMedia = () => {
   const performAnalysis = () => {
     try {
       // Open the Streamlit application in a new tab/window
-      window.open('http://3.12.150.122:8501/', '_blank');
+      window.open('http://18.220.45.87:8501/', '_blank');
     } catch (Exception) {
       // Handle the error as needed, e.g., display an error message to the user
     }

@@ -106,7 +106,7 @@ const GeoDemographic = () => {
                             </ul>
                         </div>
 
-                        <div className="content">
+                        <div className="content" >
                             {geodemoMenu[selectedOption]}
                         </div>
                     

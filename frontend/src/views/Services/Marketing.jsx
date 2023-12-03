@@ -32,10 +32,10 @@ import './SocialMedia.css';
 const Marketing = () => {
   const [selectedOption, setSelectedOption] = useState('Analysis');
 
-  const redirectToURL = () => {
-    // Redirecting to streamlit in EC2 instance
-    window.location.href = 'http://3.130.169.45:8501';
-  };
+  // const redirectToURL = () => {
+  //   // Redirecting to streamlit in EC2 instance
+  //   window.location.href = 'http://3.130.169.45:8501';
+  // };
 
   const marketdemoMenu = {
     Analysis: (

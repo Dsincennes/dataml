@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './SocialMedia.css';
-import Plot from 'react-plotly.js'; // Import Plotly
+import Plot from 'react-plotly.js';
 
 // Define the platformContent object before using it
 const platformContent = {
@@ -103,7 +103,7 @@ const platformContent2 = {
               y: [150, 120, 100, 90, 80],
             },
           ]}
-          layout={{width: 600, height: 400, title: 'Top Countries' }}
+          layout={{ width: 600, height: 400, title: 'Top Countries' }}
         />
       </div>
       <div>
@@ -123,7 +123,6 @@ const platformContent2 = {
     </div>
   ),
 };
-
 const SocialMedia = () => {
   const [selectedOption, setSelectedOption] = useState('Analysis');
   const [selectedPlatform, setSelectedPlatform] = useState(null);
@@ -144,7 +143,14 @@ const SocialMedia = () => {
               </li>
             ))}
           </ul>
-          {selectedPlatform && platformContent[selectedPlatform]}
+          {selectedPlatform && (
+            <div>
+              {platformContent[selectedPlatform]}
+              <button onClick={() => performAnalysis(selectedPlatform)}>
+                Run Analysis
+              </button>
+            </div>
+          )}
         </div>
       </div>
     ),
@@ -175,6 +181,16 @@ const SocialMedia = () => {
     ),
   };
 
+  const performAnalysis = () => {
+    try {
+      // Open the Streamlit application in a new tab/window
+      window.open('http://18.220.45.87:8501/', '_blank');
+    } catch (Exception) {
+      // Handle the error as needed, e.g., display an error message to the user
+    }
+  };
+
+
   return (
     <div className="social-media-dashboard">
       <Navbar />
@@ -190,7 +206,7 @@ const SocialMedia = () => {
                 className={selectedOption === option ? 'active' : ''}
                 onClick={() => {
                   setSelectedOption(option);
-                  setSelectedPlatform(null); // Reset selected platform
+                  setSelectedPlatform(null);
                 }}
               >
                 {option}

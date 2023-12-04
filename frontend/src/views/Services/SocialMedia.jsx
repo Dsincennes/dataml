@@ -103,7 +103,7 @@ const platformContent2 = {
               y: [150, 120, 100, 90, 80],
             },
           ]}
-          layout={{width: 600, height: 400, title: 'Top Countries' }}
+          layout={{ width: 600, height: 400, title: 'Top Countries' }}
         />
       </div>
       <div>
@@ -189,7 +189,7 @@ const SocialMedia = () => {
       // Handle the error as needed, e.g., display an error message to the user
     }
   };
-  
+
 
   return (
     <div className="social-media-dashboard">

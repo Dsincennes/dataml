@@ -18,8 +18,11 @@ const GeoDemographic = () => {
                 <div>
                     <h1>Check out below</h1>
                     <button onClick={redirectToURL}>Open Streamlit</button>
-                    {/* <iframe src="http://18.221.118.171:8501" title="geodemo-st-app"className="iframe-style" ></iframe> */}
+                </div>    
+                <div>
+                    <iframe src="http://3.130.169.45:8501" title="geodemo-st-app"className="iframe-style" ></iframe>
                 </div>
+                
             </div>
         ), 
         Documentation: (

@@ -41,4 +41,10 @@
         overflow: hidden;
         margin: 20px; /* Add some margin around the dashboard content */
       }
+
+      .content {
+        overflow: auto; 
+        padding: 20px;
+        flex: 1;
+      }
 }
